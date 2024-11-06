@@ -1,0 +1,84 @@
+<!-- templates/show_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Shows</title>
+</head>
+<body>
+    <h1>Music Shows</h1>
+    <ul>
+        {% for show in shows %}
+            <li>
+                <h2>{{ show.name }}</h2>
+                <p>Date: {{ show.date }}</p>
+                <p>Venue: {{ show.place }}</p>
+                <p>Available Tickets: {{ show.total_tickets }}</p>
+                <a href="{% url 'purchase_ticket' show.id %}">Buy Tickets</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+<footer>
+      <div class="footer ">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+
+
+            </div>
+            <div class="col-md-12 border_top">
+              <form class="news">
+               <h3>Newsletter</h3>
+                <input class="newslatter" placeholder="ENTER YOUR MAIL" type="text" name=" ENTER YOUR MAIL">
+                <button class="submit">Subscribe</button>
+              </form>
+            </div>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+                  <div class="address">
+                    <ul class="loca">
+                      <li>
+                        <a href="#"><img src="{% static 'icon/loc.png' %}" alt="#" /></a>Kochi
+
+                        <li>
+
+                            <a href="#"><img src="{% static 'icon/call.png' %}" alt="#" /></a>+12586954775 </li>
+                          <li>
+                            <a href="#"><img src="{% static 'icon/email.png' %}" alt="#" /></a>demo@gmail.com </li>
+                          </ul>
+
+
+                        </div>
+                      </div>
+                       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
+                           <ul class="social_link">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                          </ul>
+                       </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+               <div class="container">
+              <div class="copyright">
+
+                  <p>Copyright 2019 All Right Reserved By ENTRO<a href="https://html.design/"></a></p>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+  <!-- Javascript files-->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>
